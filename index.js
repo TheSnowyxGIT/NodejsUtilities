@@ -5,6 +5,6 @@
 /** ============================================================*/
 
 
-
-
-module.exports = {};
+module.exports = {
+    Queue: require("./src/queue")
+};
