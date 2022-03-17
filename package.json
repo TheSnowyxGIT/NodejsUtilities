@@ -1,5 +1,5 @@
 {
-  "name": "nodejsutilities",
+  "name": "@adrien.pgd/nodejsutilities",
   "version": "1.0.0",
   "description": "Some basics structure for Nodejs",
   "main": "index.js",
