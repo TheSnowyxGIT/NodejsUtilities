@@ -1,0 +1,24 @@
+{
+  "name": "nodejsutilities",
+  "version": "1.0.0",
+  "description": "Some basics structure for Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSnowyxGIT/NodejsUtilities.git"
+  },
+  "keywords": [
+    "utilities",
+    "basic",
+    "structs"
+  ],
+  "author": "adrien.pgd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheSnowyxGIT/NodejsUtilities/issues"
+  },
+  "homepage": "https://github.com/TheSnowyxGIT/NodejsUtilities#readme"
+}
