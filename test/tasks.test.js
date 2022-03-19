@@ -2,7 +2,7 @@ const assert = require("assert")
 
 const utilities = require("../index")
 
-// For simulating delay
+// delay simulation
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }

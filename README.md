@@ -4,14 +4,16 @@
 
 * [All Classes](#All-Classes)
 * [Quick Start](#Quick-Start)
-* [Common API Methods](#Common-API-Methods)
-  * [Queue](#)
+* [Details](#Details)
+  * [Queue](#Queue)
+  * [Tasks](#Tasks)
 
 ## All Classes
 
 | Classes             | verison |
 |---------------------|---------|
 | Queue               |  v1.0   |
+| Tasks               |  v1.0   |
 
 
 ## Quick Start
@@ -34,7 +36,7 @@ const my_queue = new utilities.Queue();
 ```
 
 
-## Common API Methods
+## Details
 
 ### Queue
 
@@ -96,4 +98,54 @@ const my_queue = new Queue();
 
 my_queue.enqueue(5); // correct
 my_queue.enqueue("Hey"); // incorrect (throw an error)
+```
+
+### Tasks
+
+Implementation of a Tasks system based on a queue.
+The purpose of this class is to provide a queue that will receive functions and executed them by order.
+Example of use : If you need to chain advertising messages.
+
+| Class               | verison | event emitter | unit tested |
+|---------------------|---------|---------------|-------------|
+| Tasks               |  v1.0   |   yes         |  yes        |
+
+#### Methods
+
+| name                | description                              | Error (thow an error)                       |
+|---------------------|------------------------------------------|---------------------------------------------|
+| add_task            | Add a task in the queue                  | if the task is not a function               |
+
+#### emitter
+
+| signal              |   data             | description                                |
+|---------------------|--------------------|--------------------------------------------|
+| started             |  (task_uuid)       |   Sent when a task is execute              |
+| finished            |  (task_uuid)       |   Sent when a task is finished             |
+
+
+#### Example
+
+```js
+import { Tasks } from '@adrien.pgd/nodejsutilities'
+
+// delay simulation
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const my_tasks = new Tasks();
+let last_ad_uuid;
+
+my_tasks.on("finished", uuid => {
+    if (last_ad_uuid === uuid)
+        console.log(`Next ad`);
+    else 
+        console.log(`end`);
+})
+
+tasks.add_task(async ()=>{await sleep(3000); console.log("First add !")})
+tasks.add_task(async ()=>{await sleep(3000); console.log("Second add !")})
+last_ad_uuid = tasks.add_task(async ()=>{await sleep(3000); console.log("Last add !")})
+
 ```

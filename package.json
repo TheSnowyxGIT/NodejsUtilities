@@ -24,5 +24,8 @@
   "homepage": "https://github.com/TheSnowyxGIT/NodejsUtilities#readme",
   "devDependencies": {
     "mocha": "^9.2.2"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
   }
 }
