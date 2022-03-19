@@ -40,9 +40,9 @@ const my_queue = new utilities.Queue();
 
 Basic implementation of a queue.
 
-| Class               | verison | emitter |
-|---------------------|---------|---------|
-| Queue               |  v1.0   |   yes   |
+| Class               | verison | event emitter | unit tested |
+|---------------------|---------|---------------|-------------|
+| Queue               |  v1.0   |   yes         |  yes        |
 
 #### Methods
 

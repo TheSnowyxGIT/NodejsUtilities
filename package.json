@@ -4,7 +4,8 @@
   "description": "Some basics structure for Nodejs",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "check": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/TheSnowyxGIT/NodejsUtilities/issues"
   },
-  "homepage": "https://github.com/TheSnowyxGIT/NodejsUtilities#readme"
+  "homepage": "https://github.com/TheSnowyxGIT/NodejsUtilities#readme",
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
 }
