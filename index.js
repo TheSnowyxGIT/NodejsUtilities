@@ -6,5 +6,6 @@
 
 
 module.exports = {
-    Queue: require("./src/queue")
+    Queue: require("./src/queue"),
+    Tasks: require("./src/task")
 };
