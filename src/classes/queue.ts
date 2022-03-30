@@ -1,13 +1,13 @@
 import EventEmitter from "../eventEmitter";
 
-class Queue<ElementType> extends EventEmitter{
+export class Queue<ElementType> extends EventEmitter{
 
     private values_: Record<number, ElementType>;
     private head_: number;
     private tail_: number;
     private checker_: (element: ElementType) => boolean;
 
-    constructor(checker: (element: ElementType) => boolean) {
+    constructor(checker: (element: ElementType) => boolean = (element) => true) {
         super();
         this.values_ = {};
         this.head_ = 0;
@@ -51,6 +51,3 @@ class Queue<ElementType> extends EventEmitter{
         return this.length() == 0;
     }
 }
-
-
-module.exports = Queue;
