@@ -5,3 +5,4 @@
 /** ============================================================*/
 
 export {Queue} from "./classes/queue";
+export {Tasks} from "./classes/task";
