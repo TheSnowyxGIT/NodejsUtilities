@@ -12,7 +12,7 @@
 
 | Classes             | verison |
 |---------------------|---------|
-| Queue               |  v1.0   |
+| Queue               |  v1.1   |
 | Tasks               |  v1.0   |
 
 
@@ -44,7 +44,7 @@ Basic implementation of a queue.
 
 | Class               | verison | event emitter | unit tested |
 |---------------------|---------|---------------|-------------|
-| Queue               |  v1.0   |   yes         |  yes        |
+| Queue               |  v1.1   |   yes         |  yes        |
 
 #### Methods
 
@@ -83,21 +83,6 @@ my_queue.on("dequeue", deleted_item => {
 my_queue.enqueue(5); // my_queue = {5}
 const value = my_queue.peek(); // value = 5
 const value2 = my_queue.dequeue(); // value2 = 5; my_queue = {}
-```
-
-Item format checker
-
-```js
-import { Queue } from '@adrien.pgd/nodejsutilities'
-
-const checker = item => {
-    return typeof(item) == "number";
-}
-
-const my_queue = new Queue();
-
-my_queue.enqueue(5); // correct
-my_queue.enqueue("Hey"); // incorrect (throw an error)
 ```
 
 ### Tasks
