@@ -1,15 +1,16 @@
-const assert = require("assert")
+import { Queue } from "../src/index";
 
-const utilities = require("../src/index")
+import * as assert from "assert"
+
 
 describe("Basic Queue", () => {
     it('new instance empty', () => {
-        const queue = new utilities.Queue();
+        const queue = new Queue();
         assert.equal(queue.is_empty(), true);
         assert.equal(queue.length(), 0);
     })
     it('enqueue one element', () => {
-        const queue = new utilities.Queue();
+        const queue = new Queue();
         queue.enqueue(5);
         assert.equal(queue.is_empty(), false);
         assert.equal(queue.length(), 1);
@@ -17,7 +18,7 @@ describe("Basic Queue", () => {
     })
     
     it('dequeue one element', () => {
-        const queue = new utilities.Queue();
+        const queue = new Queue();
         queue.enqueue(5);
         queue.dequeue();
         assert.equal(queue.is_empty(), true);
@@ -25,7 +26,7 @@ describe("Basic Queue", () => {
     })
 
     it('dequeue multiple elements', () => {
-        const queue = new utilities.Queue();
+        const queue = new Queue();
         queue.enqueue(5);
         queue.enqueue(6);
         

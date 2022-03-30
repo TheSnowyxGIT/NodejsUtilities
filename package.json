@@ -4,7 +4,7 @@
   "description": "Some basics structure for Nodejs",
   "main": "index.js",
   "scripts": {
-    "check": "mocha -r ts-node/register",
+    "check": "mocha -r ts-node/register test/**/*.test.ts",
     "dev": "concurrently -k -n \"TypeScript,Node\" -p \"[{name}]\" -c \"blue,green\" \"tsc --watch\" \"nodemon dist/index.js\""
   },
   "repository": {
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@types/mocha": "^9.1.0",
+    "@types/uuid": "^8.3.4",
     "uuid": "^8.3.2"
   }
 }

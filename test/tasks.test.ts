@@ -1,28 +1,24 @@
-const assert = require("assert")
+import { Tasks } from "../src/index";
 
-const utilities = require("../src/index")
+import * as assert from "assert"
 
 // delay simulation
-function sleep(ms) {
+function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 describe("Tasks", () => {
-    it('added non function task', function() {
-        const tasks = new utilities.Tasks();
-        assert.throws(() => tasks.add_task(5));
-    })
     it('added function task', function() {
-        const tasks = new utilities.Tasks();
+        const tasks = new Tasks();
         assert.doesNotThrow(() => tasks.add_task(()=>{}));
     })
     it('basic single task', function(done) {
         this.timeout(500); // wait for the events
-        const tasks = new utilities.Tasks();
+        const tasks = new Tasks();
 
-        let key;
+        let key: string;
 
-        tasks.on("finished", cur_key => {
+        tasks.on("finished", (cur_key: string) => {
             assert.equal(key, cur_key);
             done();
         })
@@ -31,12 +27,12 @@ describe("Tasks", () => {
     })
     it('multiple tasks', function(done) {
         this.timeout(500); // wait for the events
-        const tasks = new utilities.Tasks();
+        const tasks = new Tasks();
 
         let count = 0;
-        let keys = [];
+        let keys: Array<string> = [];
 
-        tasks.on("finished", cur_key => {
+        tasks.on("finished", (cur_key: string) => {
             assert.equal(keys[count - 1], cur_key);
             if (count == 3){
                 done();
