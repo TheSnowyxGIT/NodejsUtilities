@@ -1,6 +1,6 @@
 const assert = require("assert")
 
-const utilities = require("../index")
+const utilities = require("../src/index")
 
 // delay simulation
 function sleep(ms) {
