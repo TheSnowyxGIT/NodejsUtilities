@@ -34,22 +34,3 @@ describe("Basic Queue", () => {
         assert.throws(queue.dequeue);
     })
 })
-
-describe("Checker Queue", () => {
-    it('enqueue corrects elements', () => {
-        const queue = new utilities.Queue( elt =>{
-            return typeof elt === "number" && elt % 2 == 0
-        });
-        assert.doesNotThrow(()=>queue.enqueue(0))
-        assert.doesNotThrow(()=>queue.enqueue(-2))
-        assert.doesNotThrow(()=>queue.enqueue(4))
-        assert.doesNotThrow(()=>queue.enqueue(2222))
-    })
-
-    it('enqueue bads elements', () => {
-        const queue = new utilities.Queue( elt =>{
-            return typeof elt === "number" && elt % 2 == 0
-        });
-        assert.throws(()=>queue.enqueue("salut"))
-    })
-})
